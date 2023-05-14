@@ -59,7 +59,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//第一次无鉴权访问被nginx 302到这里，输出登录页
-	if r.Header.Get("X-Original-URI") != "" { //记录原url
+	if r.Header.Get("X-Original-URI") != "" && r.Header.Get("X-Original-URI") != "/favicon.ico" { //记录原url
 		http.SetCookie(w, &http.Cookie{Name: "origin", Value: r.Header.Get("X-Original-URI")})
 	}
 
