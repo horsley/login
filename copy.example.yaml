@@ -1,0 +1,28 @@
+login:
+  secret: jwt_secret_here
+  listen: :23514
+system:
+  - name: system1
+    url:
+      - https://a.horsleyli.com/
+  - name: system2
+    url:
+      - https://b.horsleyli.com/
+  - name: system3
+    url:
+      - https://c.lab.horsleyli.com/
+  - name: system4
+    url:
+      - https://d.lab.horsleyli.com/
+user:
+  - name: horsley
+    password: user_password_here
+    allow:
+      - system1
+      - system3
+      - system4
+  - name: taylor
+    password: user_password_here
+    allow:
+      - system1
+      - system4
