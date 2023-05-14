@@ -22,6 +22,7 @@ FROM scratch as prod
 COPY --from=build /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # 在build阶段复制可执行的go二进制文件app
 COPY --from=build /go/release/app /
+COPY --from=build /go/release/login.html /
 
 # 启动服务
 CMD ["/app"]
